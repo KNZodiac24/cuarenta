@@ -1,0 +1,44 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar: Cuarenta",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "main.cpp",
+                "-o",
+                "Cuarenta.exe",
+                "-O1",
+                "-Wall",
+                "-std=c++14",
+                "-Wno-missing-braces",
+                "-I",
+                "include/",
+                "-L",
+                "lib/",
+                "-lraylib",
+                "-lopengl32",
+                "-lgdi32",
+                "-lwinmm"
+            ]
+        },
+        {
+            "label": "Ejecutar: Cuarenta",
+            "type": "shell",
+            "command": "Cuarenta.exe"
+        },
+        {
+            "label": "Compilar y ejecutar: Cuarenta",
+            "dependsOrder": "sequence",
+            "dependsOn": ["Compilar: Cuarenta", "Ejecutar: Cuarenta"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compilar y ejecutar el código en C++."
+        }
+    ]
+}
