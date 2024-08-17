@@ -9,12 +9,14 @@
             "command": "g++",
             "args": [
                 "main.cpp",
+                "recursos/*.cpp",
                 "-o",
                 "Cuarenta.exe",
                 "-O1",
                 "-Wall",
-                "-std=c++14",
+                "-std=c++23",
                 "-Wno-missing-braces",
+                //"-mwindows", // Descomentar para hacer que no aparezca la consola al ejecutar el .exe
                 "-I",
                 "include/",
                 "-L",
