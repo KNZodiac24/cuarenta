@@ -12,7 +12,7 @@
                 "recursos/*.cpp",
                 "-o",
                 "Cuarenta.exe",
-                "-O1",
+                "-O3",
                 "-Wall",
                 "-std=c++23",
                 "-Wno-missing-braces",

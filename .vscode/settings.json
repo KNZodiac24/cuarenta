@@ -1,5 +1,5 @@
 {
     "code-runner.executorMap": {
-        "cpp": "cd $dir && g++ main.cpp recursos/*.cpp -o Cuarenta.exe -O1 -Wall -std=c++23 -Wno-missing-braces -I include/ -L lib/ -lraylib -lopengl32 -lgdi32 -lwinmm && Cuarenta.exe",
+        "cpp": "cd $dir && g++ main.cpp recursos/*.cpp -o Cuarenta.exe -O3 -Wall -std=c++23 -Wno-missing-braces -mwindows -I include/ -L lib/ -lraylib -lopengl32 -lgdi32 -lwinmm && Cuarenta.exe",
     }
 }

@@ -12,7 +12,6 @@ enum Palo{
 
 class Carta {
 
-    Texture2D imagenMazo;
     unsigned short palo;
     unsigned short numero; // J = 11, Q = 12, K = 13
     bool esPerro;
@@ -26,15 +25,15 @@ class Carta {
     public:
         Carta(unsigned short palo, unsigned short numero);
 
-        void setPosicion(Vector2 x);
+        void setPosicion(Vector2 pos);
 
         Vector2 getPosicion();
 
-        Rectangle getHitbox();
+        Rectangle& getHitbox();
 
         bool getEsPerro();
 
-        void dibujar();
+        void dibujar(Texture2D img);
 
         void DragAndDrop();
 
