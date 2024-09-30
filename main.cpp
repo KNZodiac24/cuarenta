@@ -1,8 +1,8 @@
 #include "raylib.h"
 #include "recursos/Mesa.cpp"
-#include "recursos/Carta.h"
-#include "recursos/Mazo.h"
-#include "recursos/Mano.h"
+#include "recursos/Carta.hpp"
+#include "recursos/Mazo.hpp"
+#include "recursos/Mano.hpp"
 
 int main(){
 

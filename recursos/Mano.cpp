@@ -1,7 +1,7 @@
 #include "raylib.h"
-#include "Mazo.h"
-#include "Carta.h"
-#include "Mano.h"
+#include "Mazo.hpp"
+#include "Carta.hpp"
+#include "Mano.hpp"
 #include <vector>
 #include <iostream>
 
@@ -15,7 +15,7 @@ Mano::Mano(Mazo &mazo){
 }
 
 void Mano::initCartas(){
-    short aux = 0;
+    unsigned short aux = 0;
     for(Carta &carta: this->mano){
         carta.setPosicion(Vector2{aux+302.0f, 477.0f});
         aux += 79;

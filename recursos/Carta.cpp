@@ -1,5 +1,5 @@
 #include "raylib.h"
-#include "Carta.h"
+#include "Carta.hpp"
 #include <iostream>
 
 Carta::Carta(unsigned short palo, unsigned short numero){
@@ -27,6 +27,7 @@ bool Carta::getEsPerro(){
 }
 
 void Carta::dibujar(Texture2D img){
+    if (CheckCollisionPointRec(GetMousePosition(), this->hitbox)) DrawRectangleRoundedLines(this->hitbox, 0.07f, 0, 4.0f, YELLOW); // Sombreado al pasar sobre la carta
     DrawTexturePro(img,
                    Rectangle{this->numero*this->hitbox.width, this->palo*this->hitbox.height,79.0f,123.0f}, 
                    Rectangle{this->hitbox.x+this->hitbox.width/2, this->hitbox.y+this->hitbox.height/2, this->hitbox.width, this->hitbox.height},
@@ -37,24 +38,21 @@ void Carta::dibujar(Texture2D img){
 
 void Carta::DragAndDrop() {
         
-        if (CheckCollisionPointRec(GetMousePosition(), this->hitbox)) {
-
-            DrawRectangleRoundedLines(this->hitbox, 0.07f, 0, 3.0f, YELLOW); // Sombreado al pasar sobre la carta
-
-            if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
-                this->estaArrastrando = true;
-                this->diffX = GetMouseX() - this->hitbox.x;
-                this->diffY = GetMouseY() - this->hitbox.y;
-            }
+    if (CheckCollisionPointRec(GetMousePosition(), this->hitbox)) {
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+            this->estaArrastrando = true;
+            this->diffX = GetMouseX() - this->hitbox.x;
+            this->diffY = GetMouseY() - this->hitbox.y;
         }
-
-        if (estaArrastrando && IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {
-            this->hitbox.x = GetMouseX() - this->diffX;
-            this->hitbox.y = GetMouseY() - this->diffY;
-        }
-
-        if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT)) this->estaArrastrando = false;
     }
+
+    if (estaArrastrando && IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {
+        this->hitbox.x = GetMouseX() - this->diffX;
+        this->hitbox.y = GetMouseY() - this->diffY;
+    }
+
+    if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT)) this->estaArrastrando = false;
+}
 
 // Método necesario para barajar
 void swap(Carta &a, Carta &b) {

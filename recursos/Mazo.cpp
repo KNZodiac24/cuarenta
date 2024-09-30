@@ -1,5 +1,5 @@
-#include "Carta.h"
-#include "Mazo.h"
+#include "Carta.hpp"
+#include "Mazo.hpp"
 #include <vector>
 #include <algorithm>
 #include <random>
@@ -12,15 +12,13 @@ void Mazo::barajar(){
 }
 
 Mazo::Mazo(){
-    for(unsigned short palo = TREBOL; palo <= PICA; palo++){
-        for(unsigned short num = 0; num < 13; num++){
+    for(unsigned char palo = TREBOL; palo <= PICA; palo++){
+        for(unsigned char num = 1; num <= 13; num++){
             Carta temp = Carta(palo, num);
             if(!temp.getEsPerro()) this->mazo.push_back(temp);
         }
     
-        if (!this->mazo.empty()) {
-            this->barajar();
-        }
+        if (!this->mazo.empty()) this->barajar();
     }
 }
 

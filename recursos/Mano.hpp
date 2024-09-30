@@ -1,7 +1,7 @@
-#ifndef MANO_H
-#define MANO_H
+#ifndef MANO_HPP
+#define MANO_HPP
 
-#include "Mazo.h"
+#include "Mazo.hpp"
 #include "raylib.h"
 
 class Mano {

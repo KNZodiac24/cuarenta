@@ -1,5 +1,5 @@
-#ifndef CARTA_H
-#define CARTA_H
+#ifndef CARTA_HPP
+#define CARTA_HPP
 
 #include "raylib.h"
 

@@ -1,7 +1,7 @@
-#ifndef MAZO_H
-#define MAZO_H
+#ifndef MAZO_HPP
+#define MAZO_HPP
 
-#include "Carta.h"
+#include "Carta.hpp"
 #include <vector>
 
 class Mazo {
