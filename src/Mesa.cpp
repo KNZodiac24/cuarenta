@@ -1,5 +1,4 @@
 #include "raylib.h"
-#include <iostream>
 #include <vector>
 
 #define ESPACIOS_TOTALES 12
