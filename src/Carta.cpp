@@ -27,13 +27,27 @@ bool Carta::getEsPerro(){
 }
 
 void Carta::dibujar(Texture2D img){
-    if (CheckCollisionPointRec(GetMousePosition(), this->hitbox)) DrawRectangleRoundedLines(this->hitbox, 0.07f, 0, 4.0f, YELLOW); // Sombreado al pasar sobre la carta
-    DrawTexturePro(img,
-                   Rectangle{this->numero*this->hitbox.width, this->palo*this->hitbox.height,79.0f,123.0f}, 
-                   Rectangle{this->hitbox.x+this->hitbox.width/2, this->hitbox.y+this->hitbox.height/2, this->hitbox.width, this->hitbox.height},
-                   Vector2{this->hitbox.width/2, this->hitbox.height/2},
-                   0.0f,
-                   WHITE);
+    if (CheckCollisionPointRec(GetMousePosition(), this->hitbox))
+        DrawRectangleRoundedLinesEx(this->hitbox, 0.07f, 0, 4.0f, YELLOW); // Sombreado al pasar sobre la carta
+    
+    DrawTexturePro(
+        img,
+        Rectangle {
+            this->numero * this->hitbox.width,
+            this->palo * this->hitbox.height,
+            79.0f,
+            123.0f
+        }, 
+        Rectangle {
+            this->hitbox.x + this->hitbox.width/2,
+            this->hitbox.y + this->hitbox.height/2,
+            this->hitbox.width,
+            this->hitbox.height
+        },
+        Vector2 { this->hitbox.width/2, this->hitbox.height/2 },
+        0.0f,
+        WHITE
+    );
 }
 
 void Carta::DragAndDrop() {

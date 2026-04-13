@@ -1,0 +1,10 @@
+{
+    "name": "cuarenta",
+    "version": "0.0.1",
+    "description": "Juego de cartas tradicional de Ecuador",
+    "maintainers": "KNZodiac24",
+    "license": "MIT",
+    "dependencies": [
+        "raylib"
+    ]
+}
